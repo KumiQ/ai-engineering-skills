@@ -1,13 +1,13 @@
 # AI Engineering Skills for Claude Code
 
-**Opinionated role-based skills for AI-assisted software engineering: Product Owner, Architect, Developer/QA and Code Reviewer — ready to drop into Claude Code, the Claude Agent SDK, or any Claude-based coding workflow.**
+**Opinionated role-based skills for AI-assisted software engineering: Product Owner, Architect, Developer/QA and Code Reviewer - ready to drop into Claude Code, the Claude Agent SDK, or any Claude-based coding workflow.**
 
-Think of these as the four cross-functional roles a well-run engineering team already has, written as Claude Code skills you invoke with a slash command. They turn an ambiguous feature idea into a reviewed, tested, merge-ready pull request through four discrete, auditable stages — each stage with its own contract, output format and quality gates.
+Think of these as the four cross-functional roles a well-run engineering team already has, written as Claude Code skills you invoke with a slash command. They turn an ambiguous feature idea into a reviewed, tested, merge-ready pull request through four discrete, auditable stages - each stage with its own contract, output format and quality gates.
 
-- `/product-owner` — turn a raw idea into a testable spec (user stories, acceptance criteria, edge cases, non-goals)
-- `/architect` — turn the spec into a minimal, implementation-ready design (components, data flow, interfaces, risks, tradeoffs)
-- `/dev-qa` — implement with tests, enforce acceptance criteria as a contract, keep CI green
-- `/code-reviewer` — structured review for correctness, architecture, security, performance, maintainability
+- `/product-owner` - turn a raw idea into a testable spec (user stories, acceptance criteria, edge cases, non-goals)
+- `/architect` - turn the spec into a minimal, implementation-ready design (components, data flow, interfaces, risks, tradeoffs)
+- `/dev-qa` - implement with tests, enforce acceptance criteria as a contract, keep CI green
+- `/code-reviewer` - structured review for correctness, architecture, security, performance, maintainability
 
 Each skill has one job, one output format and clear handoffs to the next stage. No role expansion. No overlap. No silent scope creep.
 
@@ -21,7 +21,7 @@ Most AI coding assistants collapse "specify, design, build, review" into a singl
 - **Architecture decided inline during coding** → inconsistent patterns, no documented tradeoffs.
 - **Reviews skipped because "I'm the one who wrote it"** → regressions that only surface in production.
 
-Separating the four roles — even inside a single Claude Code session — forces each stage to produce an artifact the next stage can hold accountable. The Product Owner's acceptance criteria become the Dev/QA's test contract. The Architect's design becomes the thing the Code Reviewer measures the diff against. Ambiguity surfaces at the stage that can cheaply resolve it, instead of leaking downstream.
+Separating the four roles - even inside a single Claude Code session - forces each stage to produce an artifact the next stage can hold accountable. The Product Owner's acceptance criteria become the Dev/QA's test contract. The Architect's design becomes the thing the Code Reviewer measures the diff against. Ambiguity surfaces at the stage that can cheaply resolve it, instead of leaking downstream.
 
 This mirrors the practices strong engineering organizations already use. These skills make those practices available to every engineer, regardless of their experience with AI tools.
 
@@ -52,7 +52,7 @@ Point your agent's skill loader at the `skills/` directory, or copy the four `SK
 
 ### Any other Claude surface
 
-Each `SKILL.md` is a self-contained system prompt. Paste the body into your own agent prompt, custom instruction, or tool definition — the role, workflow and output format transfer directly.
+Each `SKILL.md` is a self-contained system prompt. Paste the body into your own agent prompt, custom instruction, or tool definition - the role, workflow and output format transfer directly.
 
 ---
 
@@ -67,7 +67,7 @@ Product Owner →  PROBLEM
                  ACCEPTANCE CRITERIA (6 testable checks)
                  EDGE CASES
                  OUT OF SCOPE
-                 OPEN QUESTIONS (2 — answered by user)
+                 OPEN QUESTIONS (2 - answered by user)
 
 User: /architect take the spec above
 
@@ -93,10 +93,10 @@ Each stage is auditable in the transcript. If the final diff drifts from the spe
 
 ## Compatibility
 
-- **Claude Code** — primary target. Each skill is invoked with its slash command and auto-triggers when the user's intent matches the `description` field.
-- **Claude Agent SDK** — drop the `SKILL.md` files into any SDK-managed skill directory.
-- **Claude Desktop / web / API** — paste the skill body as a system prompt or custom instruction.
-- **MCP coding guidelines workflows** — pairs well with Model Context Protocol servers that supply organizational engineering standards into the context window. The skills consume whatever standards are in context; the MCP layer decides what gets in.
+- **Claude Code** - primary target. Each skill is invoked with its slash command and auto-triggers when the user's intent matches the `description` field.
+- **Claude Agent SDK** - drop the `SKILL.md` files into any SDK-managed skill directory.
+- **Claude Desktop / web / API** - paste the skill body as a system prompt or custom instruction.
+- **MCP coding guidelines workflows** - pairs well with Model Context Protocol servers that supply organizational engineering standards into the context window. The skills consume whatever standards are in context; the MCP layer decides what gets in.
 
 ---
 
@@ -116,7 +116,7 @@ These skills were designed, not improvised. The guiding rules:
 
 - **Engineering leaders** rolling out AI-assisted coding across multiple teams who want consistent practice, not uneven adoption.
 - **Platform and tech leads** maintaining shared engineering standards and looking for repeatable AI workflows that honor them.
-- **Individual engineers** who want their AI assistant to behave like a team — specifying, designing, building and reviewing in distinct, inspectable steps instead of one undifferentiated blob.
+- **Individual engineers** who want their AI assistant to behave like a team - specifying, designing, building and reviewing in distinct, inspectable steps instead of one undifferentiated blob.
 - **Quality, security and regulated-environment owners** who need review practices and policies to show up in everyday AI work.
 
 ---
@@ -132,10 +132,10 @@ These skills were designed, not improvised. The guiding rules:
 
 ## Related work
 
-- **[Claude Code](https://docs.claude.com/en/docs/claude-code/overview)** — Anthropic's official CLI for Claude. These skills are first-class Claude Code skills.
-- **[Claude Agent SDK](https://docs.claude.com/en/api/agent-sdk)** — build custom agents on the same primitives.
-- **[Model Context Protocol (MCP)](https://modelcontextprotocol.io/)** — the open protocol for giving models access to your organization's standards, docs and tools.
-- **[KumiQ](https://www.kumiq.app/)** — the standards layer behind AI-assisted engineering. KumiQ provides the organizational, team and repository engineering standards these skills consume through an MCP server, so every engineer draws on the same practices in AI-assisted work. This repo was built as part of that work.
+- **[Claude Code](https://docs.claude.com/en/docs/claude-code/overview)** - Anthropic's official CLI for Claude. These skills are first-class Claude Code skills.
+- **[Claude Agent SDK](https://docs.claude.com/en/api/agent-sdk)** - build custom agents on the same primitives.
+- **[Model Context Protocol (MCP)](https://modelcontextprotocol.io/)** - the open protocol for giving models access to your organization's standards, docs and tools.
+- **[KumiQ](https://www.kumiq.app/)** - the standards layer behind AI-assisted engineering. KumiQ provides the organizational, team and repository engineering standards these skills consume through an MCP server, so every engineer draws on the same practices in AI-assisted work. This repo was built as part of that work.
 
 ---
 
@@ -145,7 +145,7 @@ Issues and PRs welcome. The bar is:
 
 - Every change must preserve each skill's single-job scope.
 - No new skills without a clearly distinct role (don't invent a `/qa` skill that overlaps with `/dev-qa`).
-- Documentation stays implementation-agnostic — these skills must keep working on any stack.
+- Documentation stays implementation-agnostic - these skills must keep working on any stack.
 
 By contributing you agree to license your contribution under the project's source-available license (see below).
 
@@ -155,7 +155,7 @@ By contributing you agree to license your contribution under the project's sourc
 
 **Source-available, free for personal and internal business use. Not open source.**
 
-You may freely use, modify, share and redistribute these skills — for yourself and inside your organization — at no cost. You may **not** incorporate them into a commercial product or service you sell, license, host, or otherwise offer to third parties.
+You may freely use, modify, share and redistribute these skills - for yourself and inside your organization - at no cost. You may **not** incorporate them into a commercial product or service you sell, license, host, or otherwise offer to third parties.
 
 See [LICENSE](./LICENSE) for the full terms. For commercial licensing (bundling these skills into a product you sell), contact **hello@kumiq.app**.
 

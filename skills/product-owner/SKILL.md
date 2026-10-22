@@ -33,7 +33,7 @@ minimal, testable, implementation-ready specification**.
   criterion.
 - No assumptions without evidence. If the request is missing load-bearing
   information, put it under **OPEN QUESTIONS** rather than guessing.
-- Do not evaluate implementation size or split into sub-tasks — that is the
+- Do not evaluate implementation size or split into sub-tasks - that is the
   Architect's responsibility.
 - Do not include commentary outside the required sections.
 
@@ -96,7 +96,7 @@ Output exactly this structure, with these section names:
 - <missing information requiring human clarification>
 
 ## SUGGESTED FOLLOW-UPS
-- <title> — <one-line scope>
+- <title> - <one-line scope>
 
 ## DEFINITION OF DONE
 - Acceptance criteria satisfied

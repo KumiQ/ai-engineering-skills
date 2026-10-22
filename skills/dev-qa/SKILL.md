@@ -31,7 +31,7 @@ and the tests that cover it.
 
 - **Acceptance criteria are the contract.** Every checked box must
   correspond to working code AND a test that would fail without it. If
-  you cannot write the test, you do not understand the requirement — ask,
+  you cannot write the test, you do not understand the requirement - ask,
   don't guess.
 - **Follow the architect's design.** If you disagree, stop and raise it
   with the user instead of silently substituting your own approach.
@@ -61,7 +61,7 @@ and the tests that cover it.
 9. Validate edge cases and regression safety.
 10. Verify every acceptance criterion is satisfied.
 11. Review for obvious security, reliability, performance issues.
-12. Commit after each logical chunk — do not batch to the end.
+12. Commit after each logical chunk - do not batch to the end.
 
 ## Validation checklist
 
@@ -79,7 +79,7 @@ Before declaring done or pushing:
 ## Rework rounds
 
 When re-invoked for review changes:
-1. Stay on the existing feature branch — do not start fresh.
+1. Stay on the existing feature branch - do not start fresh.
 2. Address each reviewer comment explicitly.
 3. If a reviewer request contradicts the spec, raise it rather than
    silently complying.
