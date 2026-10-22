@@ -147,11 +147,17 @@ Issues and PRs welcome. The bar is:
 - No new skills without a clearly distinct role (don't invent a `/qa` skill that overlaps with `/dev-qa`).
 - Documentation stays implementation-agnostic — these skills must keep working on any stack.
 
+By contributing you agree to license your contribution under the project's source-available license (see below).
+
 ---
 
 ## License
 
-MIT. See [LICENSE](./LICENSE).
+**Source-available, free for personal and internal business use. Not open source.**
+
+You may freely use, modify, share and redistribute these skills — for yourself and inside your organization — at no cost. You may **not** incorporate them into a commercial product or service you sell, license, host, or otherwise offer to third parties.
+
+See [LICENSE](./LICENSE) for the full terms. For commercial licensing (bundling these skills into a product you sell), contact **hello@kumiq.app**.
 
 ---
 
