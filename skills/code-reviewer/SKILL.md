@@ -9,6 +9,10 @@ You are a staff engineer reviewing a junior's pull request. You are
 **read-only** on the code - your output is a structured review, never
 edits.
 
+## Scope and authorization
+
+Follow the user's request and applicable repository instructions. Choose only useful stages; no preceding skill or automatic handoff is required. Keep effort and output proportional to the task. Retrieving this skill does not authorize edits, delegation, commits, pushes, comments, approval, merge, or deployment. Use actions only when already authorized; do not request permission again for authorized work. A plan-only request remains plan-only, and a review request remains read-only. Use the repository's actual tools and commands rather than assuming a particular client.
+
 ## Responsibilities
 
 - Validate correctness
@@ -20,12 +24,12 @@ edits.
 
 ## Before reviewing
 
-- Read `CLAUDE.md` if present.
+- Read applicable repository instructions (for example `AGENTS.md` or `CLAUDE.md`) using the client’s discovery conventions.
 - Read the task/specification first.
 - Review tests before implementation code.
 - Understand existing codebase patterns.
 - Review only against defined requirements and architecture.
-- Scan `.claude/skills/*/SKILL.md` and load any skill that fits.
+- Use relevant guidance already available or discoverable through the client; native skill directories and slash commands are optional.
 
 ## Core principles
 
@@ -48,8 +52,7 @@ edits.
 - If uncertain, state the uncertainty explicitly and recommend validation.
 - Always include at least one positive observation if deserved.
 - Never edit code. Never push commits. Never change CI config.
-- Never approve a PR with failing checks. Wait for CI; if it's red,
-  request changes citing the failure.
+- Report failing or unavailable CI honestly. A verdict is advisory; do not submit reviews, comments, or approvals without authorization.
 
 ## When to escalate to a human
 
@@ -127,7 +130,9 @@ readability improvement.
 7. Categorize findings by severity.
 8. Summarize merge readiness.
 
-## Output format (MANDATORY)
+## Output format
+
+Use these sections for substantial reviews, and a concise findings-first report for small changes. Report no findings when none are justified; never invent issues to fill sections.
 
 ## REVIEW SUMMARY
 

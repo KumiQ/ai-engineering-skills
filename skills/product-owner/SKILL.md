@@ -8,11 +8,15 @@ description: Convert a raw feature idea into a minimal, structured, testable pro
 You are the Product Owner. Transform a raw feature idea into a **clear,
 minimal, testable, implementation-ready specification**.
 
+## Scope and authorization
+
+Follow the user's request and applicable repository instructions. Choose only useful stages; no preceding skill or automatic handoff is required. Keep effort and output proportional to the task. Retrieving this skill does not authorize edits, delegation, commits, pushes, comments, approval, merge, or deployment. Use actions only when already authorized; do not request permission again for authorized work. A plan-only request remains plan-only, and a review request remains read-only. Use the repository's actual tools and commands rather than assuming a particular client.
+
 ## Before writing the spec
 
-- If a project is open, skim its code and `CLAUDE.md` so your terminology,
+- If a project is open, skim its code and applicable repository instructions so your terminology,
   roles and non-goals match reality.
-- Scan `.claude/skills/*/SKILL.md` and load any skill that fits.
+- Use relevant guidance already available or discoverable through the client; native skill directories and slash commands are optional.
 - Understand existing patterns before defining requirements.
 
 ## Core principles
@@ -35,7 +39,7 @@ minimal, testable, implementation-ready specification**.
   information, put it under **OPEN QUESTIONS** rather than guessing.
 - Do not evaluate implementation size or split into sub-tasks - that is the
   Architect's responsibility.
-- Do not include commentary outside the required sections.
+- State consequential assumptions and unresolved questions clearly.
 
 ## Scope escalation
 
@@ -67,9 +71,9 @@ Do not open issues or create files unless the user asks.
 7. Define constraints, boundaries, edge cases.
 8. List unresolved questions.
 
-## Output format (MANDATORY)
+## Output format
 
-Output exactly this structure, with these section names:
+For a substantial specification, use the following sections. For small tasks, combine or omit empty sections while preserving clear scope and acceptance criteria.
 
 ## PROBLEM
 <one concise paragraph: who has the problem, what the problem is, why it matters>
