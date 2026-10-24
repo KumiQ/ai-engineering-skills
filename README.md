@@ -1,15 +1,15 @@
-# AI Engineering Skills for Claude Code
+# AI Engineering Skills
 
 **Opinionated role-based skills for AI-assisted software engineering: Product Owner, Architect, Developer/QA and Code Reviewer - ready to drop into Claude Code, the Claude Agent SDK, or any Claude-based coding workflow.**
 
-Think of these as the four cross-functional roles a well-run engineering team already has, written as Claude Code skills you invoke with a slash command. They turn an ambiguous feature idea into a reviewed, tested, merge-ready pull request through four discrete, auditable stages - each stage with its own contract, output format and quality gates.
+Think of these as the four cross-functional roles a well-run engineering team already has, written as Claude Code skills you invoke with a slash command. They offer optional stages for specification, planning, implementation, and review. Select stages to suit the user’s request; they do not run automatically.
 
 - `/product-owner` - turn a raw idea into a testable spec (user stories, acceptance criteria, edge cases, non-goals)
 - `/architect` - turn the spec into a minimal, implementation-ready design (components, data flow, interfaces, risks, tradeoffs)
 - `/dev-qa` - implement with tests, enforce acceptance criteria as a contract, keep CI green
 - `/code-reviewer` - structured review for correctness, architecture, security, performance, maintainability
 
-Each skill has one job, one output format and clear handoffs to the next stage. No role expansion. No overlap. No silent scope creep.
+Each skill has a bounded role and can be used independently. Output and process effort scale with task size.
 
 ---
 
@@ -34,7 +34,7 @@ This mirrors the practices strong engineering organizations already use. These s
 Clone the repo somewhere and symlink each skill into your Claude Code skills directory:
 
 ```bash
-git clone https://github.com/YOUR-ORG/ai-engineering-skills.git
+git clone https://github.com/KumiQ/ai-engineering-skills.git
 cd ai-engineering-skills
 
 mkdir -p ~/.claude/skills
@@ -52,44 +52,13 @@ Point your agent's skill loader at the `skills/` directory, or copy the four `SK
 
 ### Any other Claude surface
 
-Each `SKILL.md` is a self-contained system prompt. Paste the body into your own agent prompt, custom instruction, or tool definition - the role, workflow and output format transfer directly.
+Each `SKILL.md` contains self-contained workflow guidance. Paste the body into your own agent prompt, custom instruction, or tool definition - the role, workflow and output format transfer directly.
 
 ---
 
 ## A typical flow
 
-```
-User: /product-owner add a per-team usage dashboard with weekly token spend
-
-Product Owner →  PROBLEM
-                 TASK SPEC
-                 USER STORIES
-                 ACCEPTANCE CRITERIA (6 testable checks)
-                 EDGE CASES
-                 OUT OF SCOPE
-                 OPEN QUESTIONS (2 - answered by user)
-
-User: /architect take the spec above
-
-Architect     →  APPROACH, COMPONENTS, DATA FLOW,
-                 INTERFACES, CONSTRAINTS, RISKS, TRADEOFFS
-                 (or: splits into 3 sub-tasks because the diff would exceed 400 lines)
-
-User: /dev-qa implement sub-task 1
-
-Dev/QA        →  Writes failing tests from acceptance criteria,
-                 implements minimal correct solution,
-                 commits per logical chunk, pushes green.
-
-User: /code-reviewer review the PR
-
-Reviewer      →  VERDICT, CRITICAL / IMPORTANT / SUGGESTIONS,
-                 WHAT'S DONE WELL, VERIFICATION STORY
-```
-
-Each stage is auditable in the transcript. If the final diff drifts from the spec, the drift is traceable to a specific stage. That's the point.
-
----
+Select the stage useful for the current request: specification (`product-owner`), planning (`architect`), authorized implementation (`dev-qa`), or read-only review (`code-reviewer`). Skip unnecessary stages. A later stage requires the user's applicable authorization; skills do not grant it. Use available client tools and repository conventions. When served over MCP, discovery returns metadata and retrieval supplies the selected body without native installation.
 
 ## Compatibility
 
@@ -105,10 +74,10 @@ Each stage is auditable in the transcript. If the final diff drifts from the spe
 These skills were designed, not improvised. The guiding rules:
 
 1. **One job per skill.** No skill does what another skill does better. Overlap is debt.
-2. **Output format is a contract.** Every skill has a MANDATORY output structure so downstream skills (and humans) can parse the output deterministically.
+2. **Output format is a contract.** Use the suggested sections for substantial tasks and shorter output for small tasks.
 3. **Ambiguity is surfaced, not papered over.** Each skill escalates (asks, flags open questions, requests human review) rather than invent requirements, architecture, or implementation details.
-4. **Smallest viable change.** The Dev/QA skill explicitly bans drive-by refactors. The Architect skill explicitly splits oversized tasks before designing them.
-5. **CI is a hard gate.** Dev/QA never pushes red. The Code Reviewer never approves a failing build. These are the only automatic kill-switches.
+4. **Smallest viable change.** The Dev/QA skill explicitly bans drive-by refactors. The Architect skill divides large work into reviewable changes without imposing an extra approval stop.
+5. **CI is a hard gate.** Dev/QA never pushes red. The Code Reviewer never approves a failing build. These are instructions, not automatic enforcement. Local checks and CI results must be reported separately.
 
 ---
 

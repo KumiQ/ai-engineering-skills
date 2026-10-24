@@ -1,6 +1,6 @@
 ---
 name: architect
-description: Design a minimal, correct, scalable, implementation-ready architecture plan for a described task. Use when the user types /architect or /arch followed by a task, hands off a Product Owner spec, or asks for an architecture plan, design doc, or implementation approach before coding. Produces an ARCHITECT PLAN with approach, components, data flow, interfaces, constraints, risks, tradeoffs, and definition of done. Splits oversized tasks into sub-tasks instead of designing them whole.
+description: Design a minimal, correct, scalable, implementation-ready architecture plan for a described task. Use when the user types /architect or /arch followed by a task, hands off a Product Owner spec, or asks for an architecture plan, design doc, or implementation approach before coding. Produces an ARCHITECT PLAN with approach, components, data flow, interfaces, constraints, risks, tradeoffs, and definition of done. Breaks large tasks into reviewable, sequenced changes.
 ---
 
 # Architect
@@ -14,11 +14,15 @@ Design approaches that are:
 - scalable
 - maintainable
 
+## Scope and authorization
+
+Follow the user's request and applicable repository instructions. Choose only useful stages; no preceding skill or automatic handoff is required. Keep effort and output proportional to the task. Retrieving this skill does not authorize edits, delegation, commits, pushes, comments, approval, merge, or deployment. Use actions only when already authorized; do not request permission again for authorized work. A plan-only request remains plan-only, and a review request remains read-only. Use the repository's actual tools and commands rather than assuming a particular client.
+
 ## Before producing the plan
 
-- Read `CLAUDE.md` if present.
+- Read applicable repository instructions (for example `AGENTS.md` or `CLAUDE.md`) using the client’s discovery conventions.
 - Read the task specification carefully.
-- Scan `.claude/skills/*/SKILL.md` and load any skill that fits.
+- Use relevant guidance already available or discoverable through the client; native skill directories and slash commands are optional.
 - Search the codebase for existing patterns and reuse them.
 - Identify affected systems, constraints, and integration points.
 - If the task is ambiguous on something load-bearing, ask one clarifying
@@ -33,24 +37,9 @@ Design approaches that are:
 - Explicitly identify risks and tradeoffs
 - Keep interfaces clear and bounded
 
-## Size check (do this first)
+## Size check
 
-Evaluate whether the task fits a single PR by one developer in ~half a day.
-It is **too large** if any of:
-
-- Touches more than 3–4 files across different layers
-- Has more than 6 acceptance criteria with distinct implementations
-- Requires significant changes to both frontend AND backend
-- Contains multiple independently deliverable pieces
-- Diff would exceed ~400 lines of meaningful changes
-
-**If too large:** do not produce one plan. Split into independently
-mergeable sub-tasks and output a short list of them (title + one-line scope
-+ sequencing notes). Each sub-task must leave the system working after it
-merges. Then stop and ask the user which sub-task to design first. Never
-assume the user wants all of them planned.
-
-**If right-sized:** produce the plan below.
+Identify independently deliverable pieces and reviewable boundaries. Follow any user or repository size budget. For large tasks, provide a sequenced plan with dependencies and checks for each piece; each merge should leave the system working. Do not stop merely because the task needs multiple PRs or ask the user to select a piece when they already requested the whole plan. Ask only when a consequential choice needs missing information.
 
 ## Hard rules
 
@@ -74,9 +63,9 @@ assume the user wants all of them planned.
 9. Evaluate tradeoffs.
 10. Validate consistency with current architecture.
 
-## Output format (MANDATORY)
+## Output format
 
-Output exactly this structure, concise and implementation-ready. Do not
+For substantial tasks, use this structure; shorten it for small tasks. Do not
 include code or pseudocode.
 
 ## ARCHITECT PLAN

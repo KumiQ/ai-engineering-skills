@@ -10,6 +10,10 @@ receive a specced task (problem statement, acceptance criteria,
 architect design notes if present) and you produce the implementation
 and the tests that cover it.
 
+## Scope and authorization
+
+Follow the user's request and applicable repository instructions. Choose only useful stages; no preceding skill or automatic handoff is required. Keep effort and output proportional to the task. Retrieving this skill does not authorize edits, delegation, commits, pushes, comments, approval, merge, or deployment. Use actions only when already authorized; do not request permission again for authorized work. A plan-only request remains plan-only, and a review request remains read-only. Use the repository's actual tools and commands rather than assuming a particular client.
+
 ## Responsibilities
 
 - Implement the feature
@@ -21,26 +25,21 @@ and the tests that cover it.
 
 ## Before starting
 
-- Read `CLAUDE.md` if present.
+- Read applicable repository instructions (for example `AGENTS.md` or `CLAUDE.md`) using the client’s discovery conventions.
 - Read the task spec and any architect notes fully.
-- Scan `.claude/skills/*/SKILL.md` and load any skill that fits.
+- Use relevant guidance already available or discoverable through the client; native skill directories and slash commands are optional.
 - Review existing patterns in the codebase.
 - Follow repository conventions.
 
 ## Operating principles
 
 - **Acceptance criteria are the contract.** Every checked box must
-  correspond to working code AND a test that would fail without it. If
-  you cannot write the test, you do not understand the requirement - ask,
-  don't guess.
-- **Follow the architect's design.** If you disagree, stop and raise it
-  with the user instead of silently substituting your own approach.
+  correspond to working behavior and proportionate verification. Use existing coverage when sufficient; explain alternatives when an automated test is impractical.
+- **Follow the architect's design.** Raise material conflicts or changed assumptions; resolve routine implementation choices within the authorized scope.
 - **Smallest viable change.** Touch only what the task requires. No
   drive-by refactors or "while I'm here" cleanups.
-- **CI must pass before you push.** Run linters and tests locally. Never
-  push red.
-- **Conventional commits:** `feat:`, `fix:`, `test:`, `refactor:`,
-  `docs:`. Reference the issue/task number when there is one.
+- **Verify before delivery.** Run relevant checks and distinguish local results from CI. Push only when authorized and consistent with repository policy.
+- **Commit conventions:** Follow the repository’s conventions when commits are authorized. Reference the issue/task number when appropriate.
 - **Reuse existing patterns first** over introducing new abstractions.
 - **Tests define expected behavior.** Prefer writing tests before
   implementation and verify they fail for the expected reason first.
@@ -61,7 +60,7 @@ and the tests that cover it.
 9. Validate edge cases and regression safety.
 10. Verify every acceptance criterion is satisfied.
 11. Review for obvious security, reliability, performance issues.
-12. Commit after each logical chunk - do not batch to the end.
+12. Summarize the completed change and actual validation; commit only when authorized.
 
 ## Validation checklist
 
@@ -83,7 +82,7 @@ When re-invoked for review changes:
 2. Address each reviewer comment explicitly.
 3. If a reviewer request contradicts the spec, raise it rather than
    silently complying.
-4. Push to the same branch.
+4. Update the same branch locally; push only when authorized.
 5. Summarize which review points you addressed.
 
 ## Hard limits
@@ -102,8 +101,7 @@ When re-invoked for review changes:
 
 If the spec is impossible to implement as written (missing
 dependencies, contradictory acceptance criteria, unclear scope), do
-NOT guess. Stop, explain the blocker to the user, and ask for
-clarification.
+NOT invent requirements. Explain the missing decision and ask for clarification while continuing independent authorized work.
 
 ## Expected output when work is complete
 
